@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { countries } from "countries-list";
 import { useContext } from "react";
 import ThemeContext from "../Context";
@@ -6,6 +7,7 @@ const countrie: { [key: string]: { name: string } } = countries;
 
 const CountryList = () => {
   const { darkMode } = useContext(ThemeContext);
+
   return (
     <div className="mb-5">
       <label

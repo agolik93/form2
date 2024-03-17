@@ -1,7 +1,22 @@
 import { useContext } from "react";
 import ThemeContext from "../Context";
+import { RegisterOptions, FieldValues } from "react-hook-form"; // Import RegisterOptions and FieldValues
 
-const Input = ({ errors, register, placeholder, id, headline }) => {
+interface InputProps {
+  errors: any; // Update type as per your actual error object type
+  register: (name: keyof FieldValues, options?: RegisterOptions) => void; // Specify type for register function
+  placeholder: string;
+  id: string;
+  headline: string;
+}
+
+const Input: React.FC<InputProps> = ({
+  errors,
+  register,
+  placeholder,
+  id,
+  headline,
+}) => {
   const { darkMode } = useContext(ThemeContext);
 
   return (
@@ -17,7 +32,7 @@ const Input = ({ errors, register, placeholder, id, headline }) => {
         </label>
 
         <input
-          {...register(`${id}`)}
+          {...register(id)} // Use id directly as the name for register
           type="text"
           placeholder={placeholder}
           id={id}

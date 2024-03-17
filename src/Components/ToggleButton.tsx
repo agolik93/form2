@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import ThemeContext from "../Context";
 import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
+import ThemeContext from "../Context";
 
 const ToggleButton = () => {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
